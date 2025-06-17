@@ -14,12 +14,12 @@ public class SampleService {
 	public void sampleMessage(String message){		
 		
 		try {
-			kafkaTemplate.send("topicName", message);
+			kafkaTemplate.send("kafkaDemoTopic", message);
 		}catch(Exception e) {e.printStackTrace();}
 		
 	}
 	
-	@KafkaListener(topics = "topicName", groupId = "topicGroupId")
+	@KafkaListener(topics = "kafkaDemoTopic", groupId = "kafkaDemoTopicGroupId")
 	public void receiveMessage(String receivedMessage){
 		
 		System.out.println("Message received:" + receivedMessage);

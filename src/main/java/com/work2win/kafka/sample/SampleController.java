@@ -15,8 +15,7 @@ public class SampleController {
 	
 	@GetMapping("/sample")
 	public void sampleMessage(@RequestParam("message") String message){		
-		service.sampleMessage(message);
-		
+		service.sampleMessage(message);		
 	}
 
 }

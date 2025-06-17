@@ -20,13 +20,12 @@ public class ProductController {
 	ProductRepository productRepository;
 	
 	@Autowired
-	KafkaPublishService service;
+	ProductService service;
 	
 	@GetMapping("products")
 	public List<Product> getProducts(){
 		
-		List<Product> products = productRepository.findAll();
-		service.userInfo(products);
+		List<Product> products = service.getAllProducts();		
 		return products;
 	}
 
